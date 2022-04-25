@@ -17,13 +17,13 @@ export class ItemsController {
 
   // * Get all items
   @Get()
-  findAll(): Item[] {
+  async findAll(): Promise<Item[]> {
     return this.itemsService.findAll();
   }
 
   // * Get single item
   @Get(':id')
-  findOne(@Param('id') id): Item {
+  async findOne(@Param('id') id): Promise<Item> {
     return this.itemsService.findOne(id);
   }
 

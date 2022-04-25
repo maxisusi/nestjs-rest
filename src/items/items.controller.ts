@@ -35,8 +35,8 @@ export class ItemsController {
 
   // * Delete Item
   @Delete(':id')
-  delete(@Param('id') id): string {
-    return `Item Deleted: ${id}`;
+  delete(@Param('id') id): Promise<Item> {
+    return this.itemsService.delete(id);
   }
 
   // * Update Item

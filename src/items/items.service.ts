@@ -16,4 +16,7 @@ export class ItemsService {
     const newitem = new this.itemModel(item);
     return await newitem.save();
   }
+  async delete(id: string): Promise<Item> {
+    return await this.itemModel.findByIdAndDelete({ _id: id });
+  }
 }
